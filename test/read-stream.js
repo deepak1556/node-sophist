@@ -22,7 +22,9 @@ describe('Sophist#readStream', function () {
   	readStream.on('data', function(data) {
   	  assert(null === data);
   	  done();
-  	})
+  	}).on('error', funciton(err) {
+  	  done(err);
+  	});
   });
 
 });
